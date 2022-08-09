@@ -1,0 +1,9 @@
+<launch>
+    <arg name="config_path" default="$(find pcd_publisher)/../config/minihattan_config_d1.yaml"/>
+    <arg name="ns" default="d1" />
+
+    <node name="pcd_publisher_node" pkg="pcd_publisher" type="pcd_publisher_node" output="log" ns="$(arg ns)">
+        <param name="config_file" type="string" value="$(arg config_path)" />
+        <param name="tf_prefix" value="$(arg ns)_" />
+    </node>
+</launch>
